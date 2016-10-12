@@ -1,0 +1,33 @@
+{
+  "name": "tiger",
+  "version": "1.0.0",
+  "description": "just a test.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huzichunjohn/tiger.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "django"
+  ],
+  "author": "johnhu <huzichunjohn@126.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/huzichunjohn/tiger/issues"
+  },
+  "homepage": "https://github.com/huzichunjohn/tiger#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "react": "^15.3.2",
+    "webpack": "^1.13.2",
+    "webpack-bundle-tracker": "0.0.93",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
