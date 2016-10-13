@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './app.jsx';
+import Hello from './hello.jsx';
+import World from './world.jsx';
 
-ReactDOM.render(<App/>, document.getElementById('react-app'))
+ReactDOM.render(<Hello/>, document.getElementById('hello'))
+ReactDOM.render(<World/>, document.getElementById('world'))
