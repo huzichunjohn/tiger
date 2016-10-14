@@ -8,3 +8,4 @@ node_modules/
 webpack-stats.json
 assets/bundles/
 *.sqlite3
+*.log
