@@ -3,14 +3,17 @@ var webpack = require('webpack')
 var BundleTracker = require('webpack-bundle-tracker')
 
 module.exports = {
-  context: __dirname,
   devtool: 'eval',
-  entry: [
+  context: __dirname,
+
+  entry: {
+    main: [
       'react-hot-loader/patch',
       'webpack-dev-server/client?http://localhost:3000',
       'webpack/hot/only-dev-server',
       './client/index',
-  ],
+    ]
+  },
 
   output: {
       path: path.resolve('./static/'),
@@ -26,6 +29,18 @@ module.exports = {
 
   module: {
     loaders: [{
+      test: /\.(ttf|eot|otf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: "file-loader"
+    },{
+      test: /\.css/,
+      loader: "style!css!autoprefixer?browsers=last 10 versions"
+    },{
+      test: /\.scss/,
+      loader: "style!css!autoprefixer?browsers=last 10 versions!sass?sourceMap"
+    },{
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: "url-loader?limit=464600&mimetype=application/font-woff",
+    },{
       test: /\.jsx?$/,
       exclude: /node_modules/,
       loaders: ['babel-loader']

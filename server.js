@@ -5,6 +5,7 @@ var config = require('./webpack.config');
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
+  inline: true,
   historyApiFallback: true,
   stats: {
     colors: true
@@ -14,5 +15,5 @@ new WebpackDevServer(webpack(config), {
     return console.log(err);
   }
 
-  console.log('Listening at http://localhost:3000/');
+  console.log('Listening at http://0.0.0.0:3000/');
 });
