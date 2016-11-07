@@ -1,10 +1,16 @@
 import React from 'react';
-
-import styles from './index.css';
+import  styles from './index.css';
 
 class World extends React.Component {
   render() {
-    return <h1 className={styles.world}>World.</h1>
+    /*
+    const style = {
+      fontSize: 25,
+      color: "white",
+      backgroundColor: "red"
+    };
+    */
+    return <h1 className={ styles.world }>World.</h1>
   }
 }
 

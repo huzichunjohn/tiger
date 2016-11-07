@@ -1,7 +1,7 @@
 const styles = {
   world : {
-    color: "red",
-    background: "yellow",
+    color: "black",
+    background: "green",
   },
 
 };

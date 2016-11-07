@@ -1,6 +1,7 @@
 var path = require("path")
 var webpack = require('webpack')
 var BundleTracker = require('webpack-bundle-tracker')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   devtool: 'eval',
@@ -22,6 +23,7 @@ module.exports = {
   },
 
   plugins: [
+    new ExtractTextPlugin('index.css', { allChunks: true }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(), // don't reload if there is an error
     new BundleTracker({filename: './webpack-stats.json'}),
@@ -33,7 +35,7 @@ module.exports = {
       loader: "file-loader"
     },{
       test: /\.css/,
-      loader: "style!css!autoprefixer?browsers=last 10 versions"
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[local]')
     },{
       test: /\.scss/,
       loader: "style!css!autoprefixer?browsers=last 10 versions!sass?sourceMap"

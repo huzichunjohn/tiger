@@ -18,7 +18,7 @@ if (module.hot) {
     const NextApp = require('./world.jsx').default;
     ReactDOM.render(
       <AppContainer>
-        <World/>
+        <NextApp/>
       </AppContainer>,
       document.getElementById('world')
     );

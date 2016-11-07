@@ -1,3 +1,9 @@
 .world {
-  color: red;
+  font-size: 25px;
+  color: white;
+  background-color: yellow;
+}
+
+body {
+  background-color: white;
 }
