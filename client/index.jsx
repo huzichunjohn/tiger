@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 
 import Hello from './hello.jsx';
 import World from './world.jsx';
+import TodoList from './todos.jsx';
 
 ReactDOM.render(<Hello/>, document.getElementById('hello'))
 ReactDOM.render(
@@ -12,6 +13,7 @@ ReactDOM.render(
   </AppContainer>,
   document.getElementById('world')
 )
+ReactDOM.render(<TodoList/>, document.getElementById('todo'))
 
 if (module.hot) {
   module.hot.accept('./world.jsx', () => {

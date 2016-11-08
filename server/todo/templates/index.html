@@ -5,11 +5,13 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello React</title>
-    <link rel="stylesheet" type="text/css" href="/static/index.css" />
+    {% render_bundle 'main'  'css' %}
+    <!-- <link rel="stylesheet" type="text/css" href="/static/index.css" /> --!>
   </head>
   <body>
     <div id="hello"></div>
     <div id="world"></div>
+    <div id="todo"></div>
     {% render_bundle 'main' 'js' %}
   </body>
 </html>
