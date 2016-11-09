@@ -13,7 +13,7 @@ ReactDOM.render(
   </AppContainer>,
   document.getElementById('world')
 )
-ReactDOM.render(<TodoList/>, document.getElementById('todo'))
+ReactDOM.render(<TodoList/>, document.getElementById('todolist'))
 
 if (module.hot) {
   module.hot.accept('./world.jsx', () => {
