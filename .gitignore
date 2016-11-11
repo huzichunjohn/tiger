@@ -9,4 +9,4 @@ webpack-stats.json
 assets/bundles/
 *.sqlite3
 *.log
-static/
+static/js/

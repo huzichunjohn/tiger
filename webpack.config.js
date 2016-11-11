@@ -9,17 +9,13 @@ module.exports = {
 
   entry: {
     main: [
-      'react-hot-loader/patch',
-      'webpack-dev-server/client?http://localhost:3000',
-      'webpack/hot/only-dev-server',
-      './client/index',
+      './client/app.jsx',
     ]
   },
 
   output: {
-      path: path.resolve('./static/'),
-      filename: "[name].js",
-      publicPath: 'http://localhost:3000/assets/bundles/', // tell django to use this URL to load packages and not use STATIC_URL + bundle_name
+      path: path.resolve('./static/js/'),
+      filename: "app.bundle.js",
   },
 
   plugins: [
