@@ -17,13 +17,13 @@ class TodoStore {
     this.registerAsync(TodoSource);
   }
 
-  onStartEditing(pk) {
+  onStartEdit(pk) {
     this.setState({
       editing: pk
     });
   }
 
-  onStopEditing(pk){
+  onStopEdit() {
     this.setState({
       editing: null
     });
@@ -37,7 +37,7 @@ class TodoStore {
 
   onFailToFetchTodos() {
     this.setState({
-      errorMessage: "todo list unavailable! :("
+      errorMessage: "Todo list unavailable! :("
     });
   }
 
@@ -116,7 +116,7 @@ class TodoStore {
     const item = this.state.todos[index];
     deleting[index] = item;
     var items = this.state.todos.slice();
-    items.splice(index, 1)
+    items.splice(index, 1);
     this.setState({
       deleting: deleting,
       todos: items

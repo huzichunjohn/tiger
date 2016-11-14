@@ -2,7 +2,7 @@ import axios from "axios";
 import TodoActions from "./TodoActions";
 
 export default {
-  fetchTodo: {
+  fetchTodos: {
     remote(state) {
       return axios.get('/todo/');
     },
@@ -17,7 +17,7 @@ export default {
       });
     },
     success: TodoActions.addedTodo,
-    error: TodoActions.FailedToAddTodo
+    error: TodoActions.failedToAddTodo
   },
   updateTodo: {
     remote(state, item) {
@@ -27,13 +27,13 @@ export default {
       });
     },
     success: TodoActions.updatedTodo,
-    error: TodoActions.FailedToUpdateTodo
+    error: TodoActions.failedToUpdateTodo
   },
   deleteTodo: {
     remote(state, item) {
       return axios.delete('/todo/' + item.id + '/');
     },
     success: TodoActions.deletedTodo,
-    error: TodoActions.FailedToDeleteTodo
+    error: TodoActions.failedToDeleteTodo
   }
 }

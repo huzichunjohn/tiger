@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import AltContainer from "alt-container";
-// import classNames from "classnames";
-// import TodoActions from "./TodoActions";
-// import TodoStore from "./TodoStore";
+import AltContainer from "alt-container";
+import classNames from "classnames";
+import TodoActions from "./TodoActions";
+import TodoStore from "./TodoStore";
 
 class TodoForm extends React.Component {
   handleSubmit(event) {
@@ -76,7 +76,7 @@ class TodoItem extends React.Component {
     }
   }
 
-  handleDelte(event) {
+  handleDelete(event) {
     TodoActions.deleteTodo(this.props.index);
   }
 
@@ -86,7 +86,7 @@ class TodoItem extends React.Component {
     // render input or div
     if (this.props.editing) {
       titleElement = <input type="text" name="edit-title" defaultValue={data.title}
-                            ref="editTitle" onKeyUp={this.handleTitleUp} onBlur={this.handleTitleChange}/>;
+                            ref="editTitle" onKeyUp={this.handleTitleKeyUp} onBlur={this.handleTitleChange}/>;
     }
     else {
       titleElement = <div className="title" onDoubleClick={this.handleStartEdit}>{data.title}</div>;
@@ -97,14 +97,13 @@ class TodoItem extends React.Component {
         <input name="completed" type="checkbox"
                defaultChecked={data.completed} onChange={this.handleCompletedChange}/>
         {titleElement}
-        <button className="delete" onClick={this.handleDelete}></button>
+        <button className="delete" onClick={this.handleDelete}>×</button>
       </li>
     );
   }
 }
 
-class TodoList extends React.component {
-  /*
+class TodoList extends React.Component {
   editTodo(index) {
     TodoActions.startEdit(index);
   }
@@ -115,11 +114,11 @@ class TodoList extends React.component {
       errorMessage = (<div className="error">{this.props.errorMessage}</div>);
     }
     var todos = this.props.todos.map((todo, i) => {
-      const key = "todo-" + i;
+      const key = 'todo-' + i;
       const data = Object.assign({}, todo);
       return (
 	<TodoItem key={key} data={todo} index={i} editing={todo.id === this.props.editing}
-                  onEdit={this.editTodo.bind(this)}/>
+                  onEdit={this.editTodo.bind(this)} />
       );
     });
     return (
@@ -127,16 +126,10 @@ class TodoList extends React.component {
 	<h1>To-do List</h1>
         {errorMessage}
         <TodoForm />
-        <ul className="todos">     
-	  {todos}	
+        <ul className="todos">
+          {todos}	
 	</ul>
       </div>
-    );
-  }
-  */
-  render() {
-    return (
-      <h1>hello world.</h1>
     );
   }
 }
@@ -156,6 +149,6 @@ class TodoApp extends React.Component {
 }
 
 ReactDOM.render(
-  <TodoList />,
+  <TodoApp />,
   document.getElementById('todo')
 );
