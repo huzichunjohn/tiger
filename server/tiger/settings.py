@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todo',
     'rest_framework',
+    'rest_framework.authtoken',
     'webpack_loader',
 ]
 
@@ -134,4 +135,10 @@ WEBPACK_LOADER = {
         'POLL_INTERVAL': 0.1,
         'IGNORE': []
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+	'rest_framework.authentication.TokenAuthentication',
+    )
 }

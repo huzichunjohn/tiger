@@ -9,7 +9,7 @@ module.exports = {
 
   entry: {
     main: [
-      './client/app.jsx',
+      './client/index.jsx',
     ]
   },
 
@@ -19,6 +19,11 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.ProvidePlugin({
+	$: 'jquery',
+	jQuery: 'jquery',
+	'window.jQuery': 'jquery'
+    }),
     new ExtractTextPlugin('index.css', { allChunks: true }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(), // don't reload if there is an error
