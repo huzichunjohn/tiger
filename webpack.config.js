@@ -9,7 +9,7 @@ module.exports = {
 
   entry: {
     main: [
-      './client/index.jsx',
+      './client/app.jsx',
     ]
   },
 
