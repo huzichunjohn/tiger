@@ -1,18 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import CartItem from './cartItem';
+import NavLink from './navLink';
+import Home from './home';
 
-const order = {
-    title: 'Fresh fruits package',
-    image: 'http://images.all-free-download.com/images/graphiclarge/citrus_fruit_184416.jpg',
-    initialQty: 3,
-    price: 8
-};
-
-ReactDOM.render(
-    <CartItem title={order.title}
-	      image={order.image}
-              initialQty={order.initialQty}
-              price={order.price} />,
-    document.getElementById('app')
-);
+export default class App extends React.Component {
+    render() {
+	return (
+	    <div>
+		<h1>React Router Tutorial</h1>
+		<ul role="nav">
+		    <li><NavLink to="/about" >About</NavLink></li>
+		    <li><NavLink to="/repos" >Repos</NavLink></li>
+		</ul>
+		{ this.props.children || <Home /> }
+	    </div>
+	);
+    }
+}
