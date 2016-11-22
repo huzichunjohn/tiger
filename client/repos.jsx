@@ -3,6 +3,11 @@ import { Link } from 'react-router';
 import NavLink from './navLink';
 
 class Repos extends React.Component {
+    constructor() {
+	super();
+	this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
     handleSubmit(event) {
 	event.preventDefault();
 	const userName = event.target.elements[0].value;
