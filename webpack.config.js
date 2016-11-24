@@ -14,8 +14,8 @@ module.exports = {
   },
 
   output: {
-      path: path.resolve('./static/js/'),
-      filename: "app.bundle.js",
+      path: path.resolve('./static/'),
+      filename: "js/app.bundle.js",
   },
 
   plugins: [
@@ -24,7 +24,7 @@ module.exports = {
 	jQuery: 'jquery',
 	'window.jQuery': 'jquery'
     }),
-    new ExtractTextPlugin('index.css', { allChunks: true }),
+    new ExtractTextPlugin('css/index.css', { allChunks: true }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(), // don't reload if there is an error
     new BundleTracker({filename: './webpack-stats.json'}),

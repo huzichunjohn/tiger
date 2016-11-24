@@ -2,7 +2,7 @@ import React from 'react';
 
 const GifItem = (image) => {
     return (
-	<li>
+	<li className="gif-item">
 	    <img src={image.gif.images.downsized.url} />
 	</li>
     );

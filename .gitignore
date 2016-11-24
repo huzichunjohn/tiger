@@ -10,3 +10,4 @@ assets/bundles/
 *.sqlite3
 *.log
 static/js/
+static/css/
