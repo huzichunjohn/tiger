@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './searchBar';
 import GifList from './gifList';
+import GifModal from './gifModal';
 import request from 'superagent';
 import './app.css';
 
@@ -24,12 +25,26 @@ class App extends React.Component {
 		    url: 'http://fakeimg.pl/300/'
 		}
 		*/
-	    ]
+	    ],
+	    selectedGif: null,
+	    modalIsOpen: false
 	};
 	this.handleTermChange = this.handleTermChange.bind(this);
     }
 
+    openModal(gif) {
+	this.setState({
+	    modalIsOpen: true,
+	    selectedGif: gif
+	});
+    }
 
+    closeModal() {
+	this.setState({
+	    modalIsOpen: false,
+	    selectedGif: null
+	});
+    }
 
     handleTermChange(term) {
 	const url = `http://api.giphy.com/v1/gifs/search?q=${term.replace(/\s/g, '+')}&api_key=dc6zaTOxFJmzC`;
@@ -43,7 +58,10 @@ class App extends React.Component {
 	return (
 	    <div>
 	        <SearchBar onTermChange={this.handleTermChange} />
-		<GifList gifs={this.state.gifs} />
+		<GifList gifs={this.state.gifs} onGifSelect={ selectedGif => this.openModal(selectedGif) } />
+		<GifModal modalIsOpen={this.state.modalIsOpen}
+			  selectedGif={this.state.selectedGif}
+			  onRequestClose={ () => this.closeModal() } />
 	    </div>
 	);
     }
