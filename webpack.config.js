@@ -9,13 +9,17 @@ module.exports = {
 
   entry: {
     main: [
+      'webpack-dev-server/client?http://localhost:3000',
+      'webpack/hot/only-dev-server',
       './client/index.jsx',
+      './client/styles/app.css',
     ]
   },
 
   output: {
       path: path.resolve('./static/'),
       filename: "js/app.bundle.js",
+      publicPath: "/assets/"
   },
 
   plugins: [
